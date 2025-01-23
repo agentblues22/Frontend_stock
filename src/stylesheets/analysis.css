@@ -1,0 +1,113 @@
+.maincontainer {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+.leftside {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 0px;
+	margin: 0px;
+}
+.details {
+	height: 40vh;
+	width: 100vb;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-shadow: 2px 2px 5px grey;
+}
+.chart {
+	height: 40vh;
+	width: 70vb;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	margin-top: 0;
+	box-shadow: 2px 2px 5px grey;
+}
+.chart2 {
+	height: 40vh;
+	width: 70vb;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	margin-top: 0;
+	box-shadow: 2px 2px 5px grey;
+}
+.heading {
+	width: 100%;
+	height: 8vh;
+	font-size: 30px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	box-shadow: 2px 2px 5px grey;
+	text-align: center;
+	padding: 3px;
+	margin-bottom: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.othdetails {
+	width: 100%;
+	height: 250px;
+	border-radius: 15px;
+}
+.charts {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+.chartnav {
+	background-color: blue;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	padding-left: 10px;
+	height: 25px;
+	margin: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.chartbtn {
+	width: 40px;
+	font-size: 10px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	height: 20px;
+	text-align: center;
+	border-radius: 2px;
+	transition-duration: 0.5s;
+	color: white;
+	padding-top: 5px;
+}
+.chartbtn:hover {
+	background-color: white;
+	color: blue;
+}
+.basic_desc {
+	width: 100%;
+	height: 100%;
+	font-size: 8px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	text-align: justify;
+	padding: 0px;
+}
+.logo {
+	width: 50px;
+	height: 7vh;
+	border-style: solid;
+	border-width: 0.5px;
+	border-color: grey;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
