@@ -22,7 +22,7 @@ function Candle(props) {
 		responsive: true,
 	};
 	return (
-		<div className="candle">
+		<div className={props.css}>
 			<ResponsivePlot
 				data={data}
 				layout={layout}

@@ -2,6 +2,7 @@
 	height: 10vh;
 	width: 100vb;
 	display: flex;
+	transition: 0.5s;
 	justify-content: space-evenly;
 	padding-top: 10px;
 	padding-left: 10px;
@@ -71,4 +72,91 @@
 	text-align: center;
 	height: 10px;
 	width: 100%;
+}
+.generalcontainerclose {
+	height: 0;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+@media only screen and (max-width: 900px) {
+	.generalcontainer {
+		height: 4vh;
+		width: 100%;
+		display: flex;
+		transition: 0.5s;
+		justify-content: space-evenly;
+		padding: 5px;
+
+		box-shadow: 2px 2px 5px grey;
+	}
+	.KPI1 {
+		height: 20px;
+		width: 40px;
+		margin: 4px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-top: 0;
+		font-size: 6px;
+		text-align: center;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+			'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		box-shadow: 2px 2px 5px grey;
+	}
+	.KPI2 {
+		height: 20px;
+		width: 40px;
+		margin: 4px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-top: 0;
+		font-size: 6px;
+		text-align: center;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+			'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		box-shadow: 2px 2px 5px grey;
+	}
+	.KPI3 {
+		height: 20px;
+		width: 40px;
+		margin: 4px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-top: 0;
+		font-size: 6px;
+		text-align: center;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+			'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		box-shadow: 2px 2px 5px grey;
+	}
+	.KPI4 {
+		height: 20px;
+		width: 40px;
+		margin: 4px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-top: 0;
+		font-size: 6px;
+		text-align: center;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+			'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		box-shadow: 2px 2px 5px grey;
+	}
+	.headingGEN {
+		font-size: 7px;
+		background-color: blue;
+		color: white;
+		text-align: center;
+		height: 7px;
+		width: 100%;
+	}
+	.generalcontainerclose {
+		height: 0;
+		overflow: hidden;
+		transition: 0.5s;
+	}
 }

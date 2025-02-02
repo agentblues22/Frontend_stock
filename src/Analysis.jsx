@@ -10,6 +10,7 @@ import Candle from './Candlestick';
 function Analysis() {
 	const [Records, setRecords] = useState({});
 	const [Chart, setChart] = useState(null);
+	const [Navig, setNavig] = useState('open');
 
 	useEffect(() => {
 		fetch('http://127.0.0.1:8000/company?comp=JPM')
@@ -31,25 +32,133 @@ function Analysis() {
 	function closefun() {
 		setChart(Records['closelist']);
 	}
+	const toggleStatus = () => {
+		if (Navig === 'closed') {
+			setNavig('open');
+		} else {
+			setNavig('closed');
+		}
+	};
+	// Function to handle checkbox changes
+
+	const [isChecked, setIsChecked] = useState(true);
+	const [Basic, setBasic] = useState('generalcontainer');
+
+	const handleCheckboxChange = () => {
+		if (isChecked == false) {
+			setIsChecked(true);
+			setBasic('generalcontainer');
+		} else {
+			setIsChecked(false);
+			setBasic('generalcontainerclose');
+		}
+	};
+	const [isChecked2, setIsChecked2] = useState(true);
+	const [Candles, setCandles] = useState('candle');
+
+	const handleCandleChange = () => {
+		if (isChecked2 == false) {
+			setIsChecked2(true);
+			setCandles('candle');
+		} else {
+			setIsChecked2(false);
+			setCandles('candleclose');
+		}
+	};
+	const [isChecked3, setIsChecked3] = useState(true);
+	const [stockVal, setstockVal] = useState('chart');
+	const [cnav, setcnav] = useState('chartnav');
+
+	const handleStockChange = () => {
+		if (isChecked3 == false) {
+			setIsChecked3(true);
+			setstockVal('chart');
+			setcnav('chartnav');
+		} else {
+			setIsChecked3(false);
+			setstockVal('chartclose');
+			setcnav('chartnavclose');
+		}
+	};
+
+	const [isChecked4, setIsChecked4] = useState(true);
+	const [Moavs, setMoavs] = useState('chart2');
+
+	const handleMoavChange = () => {
+		if (isChecked4 == false) {
+			setIsChecked4(true);
+			setMoavs('chart2');
+		} else {
+			setIsChecked4(false);
+			setMoavs('chart2close');
+		}
+	};
 
 	return (
 		<div className="maincontainer">
+			<div className="Navcon">
+				<div className={Navig}>
+					<div className="search"></div>
+					<div className="toggler">
+						<input
+							type="checkbox"
+							checked={isChecked}
+							onChange={handleCheckboxChange}
+						/>
+						<label className="check" for="vehicle1">
+							{' '}
+							Basic Metrics
+						</label>
+						<br />
+						<input
+							type="checkbox"
+							checked={isChecked2}
+							onChange={handleCandleChange}
+						/>
+						<label className="check" for="vehicle2">
+							{' '}
+							Candlestick Graph
+						</label>
+						<br />
+						<input
+							type="checkbox"
+							checked={isChecked3}
+							onChange={handleStockChange}
+						/>
+						<label className="check" for="vehicle3">
+							{' '}
+							Line Graph
+						</label>
+						<br></br>
+						<input
+							type="checkbox"
+							checked={isChecked4}
+							onChange={handleMoavChange}
+						/>
+						<label className="check" for="vehicle3">
+							{' '}
+							Moving Average
+						</label>
+						<br></br>
+					</div>
+				</div>
+
+				<div className="btndiv">
+					<button className="openbtn" onClick={toggleStatus}>
+						x
+					</button>
+				</div>
+			</div>
 			<div className="leftside">
 				<div className="details">
-					<div className="heading">
-						<div className="logo">
-							<img src={Records['Logo']}></img>
-						</div>{' '}
-						{Records['Company']}
-					</div>
-					<div className="othdetails">
-						<div className="basic_desc">{Records['Description']}</div>
-					</div>
+					<div className="heading">{Records['Company']}</div>
+					<div className="basic_desc">{Records['Description']}</div>
 				</div>
 				<General
 					final={Records['final']}
 					time={Records['interval']}
 					Last={Records['Last refresh']}
+					css={Basic}
 				/>
 				<Candle
 					moav={Records['moving Average']}
@@ -58,10 +167,11 @@ function Analysis() {
 					low={Records['lowlist']}
 					open={Records['openlist']}
 					Index={Records['index']}
+					css={Candles}
 				/>
 			</div>
 			<div className="charts">
-				<div className="chartnav">
+				<div className={cnav}>
 					<div className="chartbtn" onClick={hifun}>
 						High
 					</div>
@@ -72,10 +182,10 @@ function Analysis() {
 						Close
 					</div>
 				</div>
-				<div className="chart">
+				<div className={stockVal}>
 					<Line Records={Chart} Index={Records['index']} />
 				</div>
-				<div className="chart2">
+				<div className={Moavs}>
 					<Moav
 						moav={Records['moving Average']}
 						close={Records['closelist']}

@@ -9,7 +9,7 @@ function General(props) {
 	];
 
 	return (
-		<div className="generalcontainer">
+		<div className={props.css}>
 			<div className="KPI1">
 				<div className="headingGEN">Final Price:</div>
 				{props.final}
