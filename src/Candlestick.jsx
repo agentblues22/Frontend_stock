@@ -3,7 +3,7 @@ import './stylesheets/candle.css';
 function Candle(props) {
 	const data = [
 		{
-			x: props.index,
+			x: props.Index,
 			open: props.open,
 			high: props.high,
 			low: props.low,
@@ -14,8 +14,22 @@ function Candle(props) {
 
 	const layout = {
 		title: 'Candlestick Plot of high,low and Close',
-		xaxis: { title: 'Time' },
-		yaxis: { title: 'values' },
+		autosize: true,
+		mode: 'lines+markers',
+		plot_bgcolor: 'white',
+		paper_bgcolor: 'white',
+		xaxis: {
+			title: 'Time',
+			tickfont: {
+				size: 8,
+			},
+		},
+		yaxis: {
+			title: 'value',
+			tickfont: {
+				size: 8,
+			},
+		},
 	};
 
 	const config = {

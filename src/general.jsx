@@ -5,6 +5,7 @@ function General(props) {
 			final: props.final,
 			time: props.time,
 			last: props.Last,
+			sector: props.sector,
 		},
 	];
 
@@ -23,7 +24,8 @@ function General(props) {
 				{props.Last}
 			</div>
 			<div className="KPI4">
-				<div className="headingGEN">Random:</div>rand
+				<div className="headingGEN">Sector:</div>
+				{props.sector}
 			</div>
 		</div>
 	);

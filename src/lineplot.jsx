@@ -3,9 +3,13 @@ import './stylesheets/lineplot.css';
 function Line(props) {
 	const data = [
 		{
-			x: props.index,
+			x: props.Index,
 			y: props.Records,
 			type: 'scatter',
+			marker: {
+				color: 'red', // Line/marker color
+				size: 10,
+			},
 		},
 	];
 
@@ -13,8 +17,20 @@ function Line(props) {
 		title: 'variation of Value over time',
 		autosize: true,
 		mode: 'lines+markers',
-		marker: { color: 'red' },
-		line: { color: 'red' },
+		plot_bgcolor: 'white',
+		paper_bgcolor: 'white',
+		xaxis: {
+			title: 'Time',
+			tickfont: {
+				size: 8,
+			},
+		},
+		yaxis: {
+			title: 'value',
+			tickfont: {
+				size: 8,
+			},
+		},
 	};
 
 	const config = {

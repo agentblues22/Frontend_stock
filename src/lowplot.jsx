@@ -11,8 +11,22 @@ function Moav(props) {
 
 	const layout = {
 		title: 'Moving Averages over a period of 5',
-		xaxis: { title: 'Values' },
-		yaxis: { title: 'Frequency' },
+		autosize: true,
+		mode: 'lines+markers',
+		plot_bgcolor: 'white',
+		paper_bgcolor: 'white',
+		xaxis: {
+			title: 'Time',
+			tickfont: {
+				size: 8,
+			},
+		},
+		yaxis: {
+			title: 'value',
+			tickfont: {
+				size: 8,
+			},
+		},
 	};
 
 	const config = {

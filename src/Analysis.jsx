@@ -7,6 +7,8 @@ import Low from './lowplot';
 import Moav from './lowplot';
 import General from './general';
 import Candle from './Candlestick';
+import Moredet from './moredet';
+import AI from './AIgent.jsx';
 function Analysis() {
 	const [Records, setRecords] = useState({});
 	const [Chart, setChart] = useState(null);
@@ -93,6 +95,18 @@ function Analysis() {
 			setMoavs('chart2close');
 		}
 	};
+	const [isChecked5, setIsChecked5] = useState(true);
+	const [Metric, setMetric] = useState('moredetcontainer');
+
+	const handleMetricChange = () => {
+		if (isChecked5 == false) {
+			setIsChecked5(true);
+			setMetric('moredetcontainer');
+		} else {
+			setIsChecked5(false);
+			setMetric('moredetcontainerclose');
+		}
+	};
 
 	return (
 		<div className="maincontainer">
@@ -140,6 +154,16 @@ function Analysis() {
 							Moving Average
 						</label>
 						<br></br>
+						<input
+							type="checkbox"
+							checked={isChecked5}
+							onChange={handleMetricChange}
+						/>
+						<label className="check" for="vehicle3">
+							{' '}
+							Important Metrics
+						</label>
+						<br></br>
 					</div>
 				</div>
 
@@ -159,6 +183,7 @@ function Analysis() {
 					time={Records['interval']}
 					Last={Records['Last refresh']}
 					css={Basic}
+					sector={Records['Sector']}
 				/>
 				<Candle
 					moav={Records['moving Average']}
@@ -168,6 +193,23 @@ function Analysis() {
 					open={Records['openlist']}
 					Index={Records['index']}
 					css={Candles}
+				/>
+				<AI
+					final={Records['final']}
+					time={Records['interval']}
+					Last={Records['Last refresh']}
+					EPS={Records['EPS']}
+					ProfitM={Records['ProfitMargin']}
+					Currency={Records['Currency']}
+					EBITDA={Records['EBITDA']}
+					RevenuePerShare={Records['RevenuePerShareTTM']}
+					OperatingMargin={Records['OperatingMarginTTM']}
+					ReturnOnAssets={Records['ReturnOnAssetsTTM']}
+					ReturnOnEquity={Records['ReturnOnEquityTTM']}
+					Revenue={Records['RevenueTTM']}
+					GrossProfit={Records['GrossProfitTTM']}
+					QuarterlyEarningsGrowth={Records['QuarterlyEarningsGrowthYOY']}
+					QuarterlyRevenueGrowth={Records['QuarterlyRevenueGrowthYOY']}
 				/>
 			</div>
 			<div className="charts">
@@ -195,6 +237,21 @@ function Analysis() {
 						Index={Records['index']}
 					/>
 				</div>
+				<Moredet
+					css={Metric}
+					EPS={Records['EPS']}
+					ProfitM={Records['ProfitMargin']}
+					Currency={Records['Currency']}
+					EBITDA={Records['EBITDA']}
+					RevenuePerShare={Records['RevenuePerShareTTM']}
+					OperatingMargin={Records['OperatingMarginTTM']}
+					ReturnOnAssets={Records['ReturnOnAssetsTTM']}
+					ReturnOnEquity={Records['ReturnOnEquityTTM']}
+					Revenue={Records['RevenueTTM']}
+					GrossProfit={Records['GrossProfitTTM']}
+					QuarterlyEarningsGrowth={Records['QuarterlyEarningsGrowthYOY']}
+					QuarterlyRevenueGrowth={Records['QuarterlyRevenueGrowthYOY']}
+				/>
 			</div>
 		</div>
 	);
