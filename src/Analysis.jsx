@@ -13,6 +13,7 @@ function Analysis() {
 	const [Records, setRecords] = useState({});
 	const [Chart, setChart] = useState(null);
 	const [Navig, setNavig] = useState('open');
+	const [Navsymb, setNavsymb] = useState('›');
 
 	useEffect(() => {
 		fetch('http://127.0.0.1:8000/company?comp=JPM')
@@ -37,8 +38,10 @@ function Analysis() {
 	const toggleStatus = () => {
 		if (Navig === 'closed') {
 			setNavig('open');
+			setNavsymb('‹');
 		} else {
 			setNavig('closed');
+			setNavsymb('›');
 		}
 	};
 	// Function to handle checkbox changes
@@ -169,7 +172,7 @@ function Analysis() {
 
 				<div className="btndiv">
 					<button className="openbtn" onClick={toggleStatus}>
-						x
+						{Navsymb}
 					</button>
 				</div>
 			</div>
