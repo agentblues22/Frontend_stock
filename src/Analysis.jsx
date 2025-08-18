@@ -122,7 +122,7 @@ function Analysis() {
 							checked={isChecked}
 							onChange={handleCheckboxChange}
 						/>
-						<label className="check" for="vehicle1">
+						<label className="check" >
 							{' '}
 							Basic Metrics
 						</label>
@@ -132,7 +132,7 @@ function Analysis() {
 							checked={isChecked2}
 							onChange={handleCandleChange}
 						/>
-						<label className="check" for="vehicle2">
+						<label className="check" >
 							{' '}
 							Candlestick Graph
 						</label>
@@ -142,7 +142,7 @@ function Analysis() {
 							checked={isChecked3}
 							onChange={handleStockChange}
 						/>
-						<label className="check" for="vehicle3">
+						<label className="check" >
 							{' '}
 							Line Graph
 						</label>
@@ -152,7 +152,7 @@ function Analysis() {
 							checked={isChecked4}
 							onChange={handleMoavChange}
 						/>
-						<label className="check" for="vehicle3">
+						<label className="check" >
 							{' '}
 							Moving Average
 						</label>
@@ -162,7 +162,7 @@ function Analysis() {
 							checked={isChecked5}
 							onChange={handleMetricChange}
 						/>
-						<label className="check" for="vehicle3">
+						<label className="check" >
 							{' '}
 							Important Metrics
 						</label>

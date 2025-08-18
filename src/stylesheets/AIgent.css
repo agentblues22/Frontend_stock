@@ -24,7 +24,6 @@
 .openB {
 	width: 150px;
 	height: 200px;
-	background-color: yellow;
 	transition-duration: 0.2s;
 	overflow: hidden;
 	white-space: nowrap;
@@ -32,4 +31,28 @@
 	top: 55%;
 	left: 77%;
 	z-index: 100;
+}
+.aicontent{
+	width:100%;
+	height:170px;
+	background-color: yellow;
+
+}
+.sender{
+	width: 100%;
+	height: 30px;
+	background-color: blue;
+}
+.msgbox{
+
+	width: 70%;
+	height: 100%;
+	padding:0%;
+	margin:0%;
+}
+.submitbutn{
+	width: 30%;
+	height: 30px;
+	padding:0%;
+	margin:0%;
 }
